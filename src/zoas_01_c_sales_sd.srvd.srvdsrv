@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination'
+define service Zoas_01_c_sales_sd {
+  expose zoas_01_C_Sales;
+}

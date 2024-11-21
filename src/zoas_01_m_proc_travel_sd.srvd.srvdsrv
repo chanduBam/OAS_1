@@ -1,0 +1,14 @@
+@EndUserText.label: 'Service Defination'
+define service Zoas_01_m_proc_travel_sd {
+  expose zoas_01_m_proc_travel;
+  expose ZOAS_01_M_PROC_BOOKING;
+  expose ZOAS_01_M_PROC_BOOKSUPPL;
+  expose ZOAS_01_I_U_customer     as Customer;
+  expose zoas_00_i_u_agency       as TravelAgency;
+  expose I_Currency;
+  expose I_Country;
+  expose /DMO/I_Supplement        as Suppliment;
+  expose /DMO/I_SupplementText    as SupplimentTexts;
+  expose /DMO/I_Carrier           as Carrier;
+  expose /DMO/I_Connection        as Connection;
+}

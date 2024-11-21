@@ -1,0 +1,9 @@
+@EndUserText.label: 'DCL'
+@MappingRole: true
+define role ZOAS_01_P_PRODDCL {
+    grant
+        select
+            on
+               ZOAS_01_P_PRODDCL where catogory = 'HP';
+                        
+}

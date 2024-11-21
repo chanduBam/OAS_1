@@ -1,0 +1,9 @@
+@EndUserText.label: 'DCL'
+@MappingRole: true
+define role ZOAS_01_P_PRODDCL2 {
+    grant
+        select
+            on
+               ZOAS_01_P_PRODDCL where (catogory) = aspect pfcg_auth( zoas_01_ab,z1category );
+                        
+}

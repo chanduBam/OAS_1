@@ -1,0 +1,4 @@
+@EndUserText.label: 'SD'
+define service ZOAS_01_C_PRODUCT_SD {
+  expose ZOAS_01_C_PRODUCT;
+}

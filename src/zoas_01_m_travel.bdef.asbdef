@@ -1,0 +1,41 @@
+managed implementation in class zbp_oas_01_m_travel unique;
+//strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZOAS_01_M_TRAVEL alias Travel
+persistent table /dmo/travel
+lock master
+//authorization master ( instance )
+etag master lastchangedat
+{
+  create;
+  update;
+  delete;
+  //field ( readonly ) travel_id;
+  association _Booking { create; }
+}
+
+define behavior for ZOAS_01_M_BOOKING alias Booking
+persistent table /dmo/booking
+lock dependent by _Travel
+//authorization dependent by _Travel
+etag master lastchangedat
+{
+  update;
+  delete;
+  field ( readonly ) travel_id, booking_id;
+  association _Travel;
+  association _Booksuppl { create; }
+}
+
+define behavior for ZOAS_01_M_booksuppl alias BookSuppl
+persistent table /dmo/booksuppl_m
+lock dependent by _Travel
+//authorization dependent by _Travel
+etag master last_changed_at
+{
+  update;
+  delete;
+  field ( readonly ) travel_id, booking_id, booking_supplement_id;
+  association _Travel;
+  association _Booking;
+}
